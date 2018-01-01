@@ -1,0 +1,26 @@
+{% load static %}
+{% load humanize %}
+<!doctype html>
+<html>
+<body>
+{% if request.user.is_authenticated %}
+Logged in as {{ request.user.username }}
+{% else %}
+Not logged in
+{% endif %}
+
+<p>ATI request{{atis.count | pluralize}} count: {{atis.count | apnumber}}</p>
+<table>
+    <thead>
+    <tr>
+    <td>ID</td><td>Description</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ati in atis %}
+    <tr><td>{{ati.request_no}}</td><td>{{ati.desc_en}}</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

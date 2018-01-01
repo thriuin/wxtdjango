@@ -1,0 +1,7 @@
+
+/themes-dist-4.0.27-gcweb/
+/db.sqlite3
+*.pyc
+.project
+.pydevproject
+.idea
