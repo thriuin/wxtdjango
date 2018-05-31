@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
-from wxtdemo.views import show_atis, show_page, show_search
+from wxtdemo.views import show_atis, show_page, show_search, DepartmentList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', show_page, name="home-en"),
     path('en', show_page, name="home-en"),
     path('ati', show_atis),
+    path('departments', DepartmentList.as_view()),
     path('search', show_search)
 ]
 

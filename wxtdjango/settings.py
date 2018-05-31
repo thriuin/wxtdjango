@@ -62,6 +62,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'wxtdemo', 'templates'),
+            os.path.join(BASE_DIR, 'wxtdjango', 'wxttemplates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -128,7 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "themes-dist-4.0.27-gcweb"),
+    os.path.join(BASE_DIR, "themes-dist-GCWeb"),
 ]
 
 HAYSTACK_CONNECTIONS = {

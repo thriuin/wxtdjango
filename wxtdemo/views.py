@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from .models import ATI
+from django.views.generic import View
+from .models import ATI, Department
 from .searchform import SearchForm
 
 # Create your views here.
@@ -35,3 +36,14 @@ def show_search(request):
         'form': form
     }
     return render(request, 'search-en.html', context)
+
+
+class DepartmentList(View):
+    def get(self, request):
+        depts = Department.objects.all()
+
+        context = {
+            'depts': depts,
+        }
+
+        return render(request, "departments.html", context)
